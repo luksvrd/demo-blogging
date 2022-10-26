@@ -2,6 +2,8 @@
 const form = document.querySelector("form");
 const main = document.querySelector("main");
 
+// lines 2-3 and 15-25 very inmportant **
+
 // TODO: create elements that will end up inside the main tag
 const h1 = document.createElement("h1");
 const h2 = document.createElement("h2");
