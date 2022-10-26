@@ -29,3 +29,44 @@ form.addEventListener("submit", function (event) {
 
   main.append(h1, h2, small, p);
 });
+
+const h1 = document.querySelector("h1");
+const h2 = document.querySelector("h2");
+const increase = document.querySelector("#increase");
+const decrease = document.querySelector("#decrease");
+const h2FontSize = Number.parseFloat(
+  getComputedStyle("h2").getPropertyValue("font-size")
+);
+
+increase.addEvent("click", function (event) {
+  h2.style.setProperty("font-size", `${h2FontSize + 0.5}em`);
+});
+
+decrease.addEvent("click", function (event) {
+  h2.style.setProperty("font-size", `${h2FontSize - 0.5}em`);
+});
+
+// qs = querySelector
+// Not necessary, but good shorthand
+// Returns an HTMLElement
+function qs(query) {
+  return document.querySelector(query);
+}
+
+// qsa = querySelectorAll
+// Returns a NodeList
+function qsa(query) {
+  return document.querySelectorAll(query);
+}
+
+// getCPV = getComputedPropertyValue
+function getCPV(element, property) {
+  return getComputedStyle(element).getPropertyValue(property);
+}
+
+// setCPV = setComputedPropertyValue
+// Though there is no "setComputedPropertyValue", this is mnemonic.
+function setCPV(element, property, value, unit = "") {
+  element.style.setProperty(property, `${value}${unit}`);
+  // There's nothing to return
+}
